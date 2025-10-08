@@ -1,7 +1,7 @@
 import { cibilChecker } from './src/index.js';
 
 try {
-    const customerCibilScore = 69999;
+    const customerCibilScore = 750;
 
     const isCustomerEligible = (customerCibilScore = null) => {
         return cibilChecker.isEligible(customerCibilScore);

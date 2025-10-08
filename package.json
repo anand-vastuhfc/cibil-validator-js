@@ -1,13 +1,35 @@
 {
-  "name": "cibil-validator",
+  "name": "cibil-validator-js",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple, robust JavaScript library to validate credit scores for loan eligibility.",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module"
+  "keywords": [
+    "cibil",
+    "score",
+    "loan",
+    "validator",
+    "javascript",
+    "module"
+  ],
+  "author": "Anand Gupta anand.gupta@vastuhfc.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anand-vastuhfc/cibil-validator-js.git"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.9.6"
+  }
 }
