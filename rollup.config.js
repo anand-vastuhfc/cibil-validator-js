@@ -1,5 +1,8 @@
-import { terser } from '@rollup/plugin-terser';
-import packageJson from '../package.json' assert { type: 'json' };
+import terser from '@rollup/plugin-terser'; // CHANGED: Now using the default export
+import fs from 'fs';
+
+// Read package.json data synchronously using Node's fs module
+const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 const libraryName = 'cibilChecker'; // The global variable name for UMD builds
 
@@ -24,13 +27,14 @@ export default {
       file: 'dist/index.umd.js',
       format: 'umd',
       name: libraryName, // Accessible as 'window.cibilChecker'
-      plugins: [terser()], // Minify the UMD build
+      plugins: [terser()], // Use terser() as the plugin call
     },
   ],
   // 3. Plugins to run during the build
   plugins: [
-    // We only minify the UMD (browser) build to keep CJS/ESM clean.
+    // We can add the terser plugin here to minify all output files if needed,
+    // but for now, we keep it only in the UMD output as planned.
   ],
-  // Prevent external dependencies (none here, but good practice)
+  // Prevent external dependencies
   external: []
 };
