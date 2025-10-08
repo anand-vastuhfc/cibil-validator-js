@@ -2,7 +2,6 @@
   "name": "cibil-validator-js",
   "version": "1.0.0",
   "description": "A simple, robust JavaScript library to validate credit scores for loan eligibility.",
-  "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "files": [

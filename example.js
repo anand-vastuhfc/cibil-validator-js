@@ -1,4 +1,4 @@
-import { cibilChecker } from './src/index.js';
+const { cibilChecker } = require('./src/index.js');
 
 try {
     const customerCibilScore = 750;
